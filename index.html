@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày 8/3</title>
+    <style>
+        body {
+            background-color: #F9D9E0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.5s ease;
+            animation: card-appear 1s ease;
+        }
+
+        @keyframes card-appear {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+            opacity: 1;
+        }
+
+        .card h1 {
+            margin-top: 30px;
+            font-size: 32px;
+            color: #333;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 1;
+        }
+
+        .card p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            line-height: 24px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 1;
+        }
+
+        .card button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #F364A2;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 1;
+        }
+
+        .card button:hover {
+            background-color: #EE4D8B;
+        }
+
+        .flower {
+            background-image: url(https://th.bing.com/th/id/R.1cc47a7d470daef68974d45330f07f39?rik=w2y5ZIbSqt279A&pid=ImgRaw&r=0);
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 150px;
+            width: 150px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .petal {
+            background-image: url(https://th.bing.com/th/id/R.1cc47a7d470daef68974d45330f07f39?rik=w2y5ZIbSqt279A&pid=ImgRaw&r=0);
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            animation-name: petal-fall;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .card-container.open .card {
+            width: 500px;
+            height: 400px;
+        }
+
+        .card-container.open .card img {
+            opacity: 0;
+        }
+
+        .card-container.open .card h1,
+        .card-container.open .card p,
+        .card-container.open .card button {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        .card-container.open .flower {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .card-container.open .petal {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        @keyframes falling {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes flower-shake {
+            0% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(-5deg);
+            }
+
+            20% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+            }
+
+            30% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(-3deg);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(3deg);
+            }
+
+            60% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(-2deg);
+            }
+
+            80% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(2deg);
+            }
+
+            90% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes petal-fall {
+            0% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+
+            20% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+                opacity: 0.8;
+            }
+
+            40% {
+                transform: translate(-50%, -50%) scale(1.2) rotate(10deg);
+                opacity: 0.6;
+            }
+
+            60% {
+                transform: translate(-50%, -50%) scale(1.3) rotate(15deg);
+                opacity: 0.4;
+            }
+
+            80% {
+                transform: translate(-50%, -50%) scale(1.4) rotate(20deg);
+                opacity: 0.2;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.5) rotate(25deg);
+                opacity: 0;
+            }
+        }
+        img {
+            display: none;
+        }
+
+        .card-container.open .card .none {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <div class="card">
+            <h1>Chúc mừng Ngày 8/3!</h1>
+            <p>Hẹp pi niu diu ai đọ nha</p>
+                <button class="btn" onclick="openCard(), openImg()" >Mở thiệp</button>
+                <!-- <div class="flower"></div>
+                <div class="petal"></div> -->
+                <img src="https://th.bing.com/th/id/R.1cc47a7d470daef68974d45330f07f39?rik=w2y5ZIbSqt279A&pid=ImgRaw&r=0"
+                    alt="Thiệp chúc mừng">
+        </div>
+    </div>
+    <script>
+        function openCard() {
+            document.querySelector('.card-container').classList.add('open');
+        }
+
+        function openImg() {
+            document.querySelector('img').classList.add('none')
+        }
+
+        const flower = document.querySelector('.flower');
+            const petals = document.createDocumentFragment();
+
+            for (let i = 0; i < 20; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                petals.appendChild(petal);
+            }
+
+            flower.appendChild(petals);
+    </script>
+</body>
+
+</html>
